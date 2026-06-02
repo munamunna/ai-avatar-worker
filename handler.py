@@ -1,10 +1,9 @@
 import runpod
-import asyncio
+
 import edge_tts
 
 
 async def generate_audio(text):
-
     output_file = "speech.mp3"
 
     communicate = edge_tts.Communicate(
@@ -17,13 +16,11 @@ async def generate_audio(text):
     return output_file
 
 
-def handler(job):
+async def handler(job):
 
     text = job["input"]["text"]
 
-    audio_file = asyncio.run(
-        generate_audio(text)
-    )
+    audio_file = await generate_audio(text)
 
     return {
         "audio_file": audio_file
