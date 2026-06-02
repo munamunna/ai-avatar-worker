@@ -1,3 +1,4 @@
 runpod
 edge-tts
 cloudinary
+requests
