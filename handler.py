@@ -1,7 +1,7 @@
 import runpod
 import edge_tts
 
-from .cloudinary_service import upload_audio
+from cloudinary_service import upload_audio
 
 
 async def generate_audio(text):
